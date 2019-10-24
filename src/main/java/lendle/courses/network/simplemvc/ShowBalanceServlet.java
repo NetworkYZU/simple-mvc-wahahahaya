@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author user
  */
-@WebServlet(name = "ShowBalanceServlet", urlPatterns = {"/ShowBalanceServlet"})
+@WebServlet(name = "ShowBalanceServlet", urlPatterns = {"/ShowBalanceServlet"})//右鍵/ShowBalanceServlet run file 後面打 ?id=customer3
 public class ShowBalanceServlet extends HttpServlet {
 
     /**

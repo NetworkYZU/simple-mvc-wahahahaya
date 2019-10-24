@@ -7,6 +7,7 @@ package lendle.courses.network.simplemvc;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +37,9 @@ public class ShowBalanceServlet extends HttpServlet {
         if(customer==null){
             
         }else if(customer.getBalance()<0){
-
+            request.setAttribute("customer", customer);
+            RequestDispatcher rd=request.getRequestDispatcher("/bank-account/NegativeBalance.jsp");
+            rd.forward(request, response);
         }else if(customer.getBalance()>10000){
 
         }else{

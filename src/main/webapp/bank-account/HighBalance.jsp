@@ -13,10 +13,11 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <h1>您太厲害了！</h1>
         <%
             BankCustomer customer=(BankCustomer)request.getAttribute("customer");
-        %>
-        <h1>Hello, <%=customer.getFirstName()%></h1>
-        您太厲害了！
+            out.println(customer.getFirstName());
+        %>  
+        
     </body>
 </html>

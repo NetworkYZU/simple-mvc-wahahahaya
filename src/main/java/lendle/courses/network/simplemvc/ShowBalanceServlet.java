@@ -40,10 +40,14 @@ public class ShowBalanceServlet extends HttpServlet {
             request.setAttribute("customer", customer);
             RequestDispatcher rd=request.getRequestDispatcher("/bank-account/NegativeBalance.jsp");
             rd.forward(request, response);
-        }else if(customer.getBalance()>10000){
-
+        }else if(customer.getBalance()>1000 && customer.getBalance()<=10000){
+            request.setAttribute("customer", customer);
+            RequestDispatcher rd=request.getRequestDispatcher("/bank-account/NormalBalance.jsp");
+            rd.forward(request, response);
         }else{
-
+            request.setAttribute("customer", customer);
+            RequestDispatcher rd=request.getRequestDispatcher("/bank-account/HighBalance.jsp");
+            rd.forward(request, response);
         }
 
     }
